@@ -17,6 +17,9 @@ function addBookToLibrary(year,author,title){
 addBookToLibrary(2021,"James","Atomic habit");
 addBookToLibrary(2021,"James","Atomic habit");
 addBookToLibrary(2021,"James","Atomic habit");
+addBookToLibrary(2021,"James","Atomic habit");
+addBookToLibrary(2021,"James","Atomic habit");
+addBookToLibrary(2021,"James","Atomic habit");
 
 display();
 

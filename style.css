@@ -1,0 +1,196 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --background-color:#FFE3E3;
+    --border-color: #ff31f1;
+    --container-bgColor:#E5D9F2;
+    --book-card-bg-color:#ffffff;
+    --text-color:#fff;
+    --title-size:25px;
+    --author-size:22px;
+    --year--size:20px;
+    --styleOfFont:monospace;
+}
+
+
+body{
+  background-color: var(--background-color);
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template: 100px 5fr 50px / 100vw;
+    gap: 10px;
+    background-color: var(--container-bgColor);
+    box-shadow: 0px 0px 7px;
+}
+
+.newbook{
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.newbook:active,
+.newbook:hover {
+  outline: 0;
+}
+
+.newbook span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.newbook:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .newbook {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.newbook{
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.singature{
+    grid-area: 3 / 1 / 4 / 3;
+    font-size: small;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    text-align: center;
+}
+
+.singature div{
+    margin: 5px auto;
+    font-family: cursive;
+    color: #fff;
+}
+
+.book-container{
+    margin: 35px auto;
+    display: flex;
+    width: 1200px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.book-card{
+    width: 350px;
+    height: 200px;
+    background-color: var(--book-card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px palevioletred;
+    border-image: linear-gradient(to right,blue,pink) 1;
+    padding: 20px 10px;
+    margin: 15px;
+}
+
+.book-card .title{
+    font-size: var(--title-size);
+    font-family: var(--styleOfFont);
+}
+
+.book-card .author{
+    font-size: var(--author-size);
+}
+
+.book-card .year{
+    font-size: var(--year--size);
+}
+
+.delete-button {
+margin: 20px 0px;
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.delete-button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.delete-button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+
+.read-button {
+  margin: 20px 0px 0px 30px;
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.read-button:hover,
+.read-button:focus {
+  background-color: #F082AC;
+}
