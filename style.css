@@ -201,12 +201,14 @@ margin: 20px 0px;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 300px;
-  height: auto;
+  height: 400px;
   border-radius: 8px;
   border-style: none;
+  box-shadow: 0px 0px 5px;
 }
 
 form{
+  margin-left: 30px;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -233,6 +235,7 @@ form label{
 
 form input{
   height: 30px;
+  width: 200px;
   border-image: linear-gradient(red,blue) 1;
 }
 
