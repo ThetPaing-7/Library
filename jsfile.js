@@ -3,23 +3,38 @@ const holder = document.querySelector(".container");
 
 const myLibrary = [];
 
-function Book(year, author, title,read = false){
-    this.year = year;
-    this.author = author;
-    this.title = title;
-    this.read = read;
+// function Book(year, author, title,read = false){
+//     this.year = year;
+//     this.author = author;
+//     this.title = title;
+//     this.read = read;
+// }
+
+class Book{
+    constructor(year, author, title, read = false){
+        this.year = year;
+        this.author = author;
+        this.title = title;
+        this.read = read
+    }
 }
 
-function addBookToLibrary(year,author,title){
-    myLibrary.push(new Book(year,author,title))
+class addBookToLibrary{
+    constructor(year,author,title){
+        myLibrary.push(new Book(year, author, title))
+    }
 }
 
-addBookToLibrary(2021,"James","Atomic habit");
-addBookToLibrary(2021,"James","Atomic habit");
-addBookToLibrary(2021,"James","Atomic habit");
-addBookToLibrary(2021,"James","Atomic habit");
-addBookToLibrary(2021,"James","Atomic habit");
-addBookToLibrary(2021,"James","Atomic habit");
+// function addBookToLibrary(year,author,title){
+//     myLibrary.push(new Book(year,author,title))
+// }
+
+new addBookToLibrary(2021,"James","Atomic habit");
+new addBookToLibrary(2021,"James","Atomic habit");
+new addBookToLibrary(2021,"James","Atomic habit");
+new addBookToLibrary(2021,"James","Atomic habit");
+new addBookToLibrary(2021,"James","Atomic habit");
+new addBookToLibrary(2021,"James","Atomic habit");
 
 display();
 
@@ -48,7 +63,7 @@ addButton.addEventListener("click",(event)=>{
     );
     
     if(!isDuplicate){
-        addBookToLibrary(year.value,author.value,title.value);
+        new addBookToLibrary(year.value,author.value,title.value);
         display();
     }else{
         alert("The book is already exists in the library")
