@@ -257,3 +257,7 @@ form button[value='cancel']{
   border-radius: 8px;
   border-style: none;
 }
+
+.active{
+  background-color: red;
+}

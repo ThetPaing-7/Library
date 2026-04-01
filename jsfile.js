@@ -1,7 +1,20 @@
 // container of the page
 const holder = document.querySelector(".container");
 
+// Form validation
+const form = document.querySelector("form")
+const titleInput = document.getElementById("title")
+const authorInput = document.getElementById("author")
+const yearInput = document.getElementById("year")
+
+const titleErrorDisplay = document.querySelector("#title+span")
+const authorErrorDisplay = document.querySelector("#author+span")
+const yearErrorDisplay = document.querySelector("#year+span")
+
+
 const myLibrary = [];
+
+customValidate()
 
 // function Book(year, author, title,read = false){
 //     this.year = year;
@@ -53,7 +66,18 @@ addNewBook.addEventListener("click",() =>{
 
 //Add the books from user to the library
 addButton.addEventListener("click",(event)=>{
+    
     event.preventDefault();
+
+    if (!titleInput.validity.valid ||
+    !authorInput.validity.valid ||
+    !yearInput.validity.valid) {
+
+    showError(titleInput, titleErrorDisplay);
+    showError(authorInput, authorErrorDisplay);
+    showError(yearInput, yearErrorDisplay);
+    return; // ⛔ STOP submission
+    }
     
     const newBook = new Book(year.value,author.value,title.value);
     const isDuplicate = myLibrary.some(book => 
@@ -155,4 +179,42 @@ function handleDelete(event){
     const index = event.target.getAttribute('data-index');
     myLibrary.splice(index,1);
     display();
+}
+
+function customValidate(){
+    titleInput.addEventListener("input",(event) =>{
+        if(titleInput.validity.valid){
+            titleErrorDisplay.textContent = ""
+            titleErrorDisplay.className = "error"
+        }else{
+            showError(titleInput,titleErrorDisplay)
+        }
+    })
+
+    authorInput.addEventListener("input",(event) =>{
+        if(authorInput.validity.valid){
+            authorErrorDisplay.textContent = ""
+            authorErrorDisplay.className = "error"
+        }else{
+            showError(authorInput,authorErrorDisplay)
+        }
+    })
+
+    yearInput.addEventListener("input",(event) =>{
+        if(yearInput.validity.valid){
+            yearErrorDisplay.textContent = ""
+            yearErrorDisplay.className = "error"
+        }else{
+            showError(yearInput,yearErrorDisplay)
+        }
+    })
+}
+
+function showError(elements,displayErrorElement){
+    if(elements.validity.valueMissing){
+        displayErrorElement.textContent = `${elements.id} cannot be Empty`
+    }else if(elements.validity.typeMismatch){
+        displayErrorElement.textContent = `${elements.id} must macth the type`
+    }
+    displayErrorElement.className = "error active"
 }
